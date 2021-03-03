@@ -4,12 +4,12 @@
     <!-- In production code, I'd create a component for an activity record
     but for simplicity I put the code here -->
     <div v-for="activity in activities" :key="activity.id" class="to-do-list__record">
-        <div class="to-do-list__record-name">
-          {{ activity.name }}
-        </div>
         <button @click="completeActivity(activity)" class="to-do-list__btn-done">
           {{ activity.completed ? '&check;' : ''}}
         </button>
+        <div class="to-do-list__record-name">
+          {{ activity.name }}
+        </div>
         <button @click="removeActivity(activity)" class="to-do-list__btn-delete">&times;</button>
     </div>
     <img src="https://i.pinimg.com/originals/64/53/09/64530957f49abda1729434ca18814d1d.jpg" alt="" />
@@ -55,10 +55,6 @@ export default {
       &-name {
         font-size: 1.5rem;
         color: $purple-dark;
-      }
-
-      &-completed {
-
       }
 
       img {
